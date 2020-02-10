@@ -48,7 +48,8 @@ getdata <- function(r, fact){
   dots$threshold <- round(rescale(x=  c(1:length(dots$pop)), to = c(1, span)),0)
   
   # circles
- dots$r <- sqrt(dots$pop*k)
+  k <- 700
+  dots$r <- sqrt(dots$pop*k)
   circles <- st_buffer(st_as_sf(dots), dist = dots$r, )
   circles <- ms_simplify(circles, keep = 0.04, keep_shapes  = TRUE)
   
